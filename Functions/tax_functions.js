@@ -37,3 +37,4 @@ console.log("$1550 gets you $" + getSocSecTax(1550) + " in social security then,
 console.log("$1100 gets you $" + getSocSecTax(1100) + " in social security then, $" + getMedicareTax(1100).toFixed(2) + " in medicare and $" + getFederalTax(1100, 6).toFixed(2) + " in federal");
 
 
+

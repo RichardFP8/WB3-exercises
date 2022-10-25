@@ -10,7 +10,7 @@ function addNumbers(num1, num2) {
 function displayReceipt(totalDue, amountPaid) {
     let change = amountPaid - totalDue;
     if (change < 0) {
-        console.log("Total Due: $" + totalDue + "\nAmount Paid: $" + amountPaid + "\n\nYou need $" + (totalDue - amountPaid) + " more in order to pay the total price");
+        console.log("Total Due: $" + totalDue + "\nAmount Paid: $" + amountPaid + "\n\nYou need $" + Math.abs(change) + " more in order to pay the total price");
     }
     
     else {
