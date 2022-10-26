@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Days</title>
+    <script>
+        "use strict";
+        window.onload = init;
+        function init() {
+            const findDays = document.getElementById("compute");
+            findDays.onclick = daysLeft;
+        }
+        function daysLeft() {
+            let date = document.getElementById("travelDate").value;
+            const returnDays = document.getElementById("travelDays");
+            //use current and convert to numeric value; convert user's input to date object then numeric; insert millieseconds
+
+            let currentMillie = new Date().getTime();
+            let travelMillie = new Date(date).getTime();
+
+            let millie = 1000 * 60 * 60 * 24;
+            //find the difference and then divide by one day (in millieseconds) to get # of days
+            let difference = travelMillie - currentMillie;
+            let numOfDays = Math.round(difference / millie);
+
+            if (numOfDays == 0) {
+                returnDays.innerHTML = "Your trip is in " + (numOfDays + 1) + " day";
+
+            }
+            else {
+                returnDays.innerHTML = "Your trip is in " + (numOfDays + 1) + " days";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <main style="width:25rem; min-width:10rem; margin: 0 auto;">
+        <h1 style="text-align: center;">I know what you don't</h1>
+
+        <form style="border:2px solid #000;width: 15rem;margin: 0 auto;padding: 1rem;">
+
+            <label for="travelDate" style="display:block;margin-bottom: 0.2rem;font-weight: bold;">Travel Date:</label>
+
+            <input type="date" id="travelDate" />
+            <input type="button" id="compute" value="Submit" style="margin-left:1.5rem;" />
+
+            <small id="travelDays" style="display:block; margin-top: 0.5rem;font-weight: normal;"></small>
+        </form>
+    </main>
+</body>
+
+</html>
