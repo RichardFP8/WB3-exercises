@@ -1,13 +1,24 @@
 "use strict";
 
-// let message = "Our corporate offices are located in Dallas, dallas, DALLAS";
-// let change = message.replace("Dallas", "Austin");
+//find the string
+let message = "Our corporate offices are located in Dallas";
+let change = message.replace("Dallas", "Austin");
 
-// //I don't understand the instructions so I tried this way...
-// console.log(message + "\n" + change + "\n" 
-// + message.match(/dallas/gi));
+ console.log(message + "\n" + change);
+//using regular expressions("/") and searching globally("g") with case-insensitve("i")
+let global = "Our corporate offices are located in dallas, DALLAS, dallas, Dallas";
+let match = global.match(/DALLAS/gi);
+console.log("Just using match()" + match);
 
-let d = new Date();
+//find the regular expression;
+let replaceGlobal = message.replace(/Dallas/g, "Austin");
+console.log("Using regular expressions with replace() " + replaceGlobal);
+
+/* match() won't work as an input for the replace() because match() returns an array 
+while replace() requires a string or regular expression, FAILED ATTEMPT*/
+
+
+// let d = new Date();
 // console.log(d.toUTCString());
 // console.log(d.toString());
 // console.log(d.toDateString());
@@ -16,7 +27,7 @@ let d = new Date();
 // console.log(d.toLocaleTimeString());
 // console.log(d.toLocaleString());
 
-let date = new Date(1903, 4, 23);
-let test = new Date("2021-06-10T12:03:34");
-console.log(date);
-console.log(test);
+// let date = new Date(1903, 4, 23);
+// let test = new Date("2021-06-10T12:03:34");
+// console.log(date);
+// console.log(test);
